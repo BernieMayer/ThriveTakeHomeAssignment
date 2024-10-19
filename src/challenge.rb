@@ -1,4 +1,5 @@
 require './src/Company'
+require './src/User'
 require 'json'
 
 class Challenge
@@ -10,10 +11,10 @@ class Challenge
     user_file = File.read(file_path_for_users)
     companies_file = File.read(file_path_for_companies)
 
-    user_hash = JSON.parse(user_file)
+    users_hash = JSON.parse(user_file)
     companies_hash = JSON.parse(companies_file)
 
-    puts(user_hash[0])
+    puts(users_hash[0])
 
   
     companies = []
@@ -21,7 +22,10 @@ class Challenge
       companies.append(Company.new(company_hash))
     end
 
-    puts companies 
+    users = []
+    users_hash.each do |user_hash|
+      users.append(User.new(user_hash))
+    end  
   end
 
 end
