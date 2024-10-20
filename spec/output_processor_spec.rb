@@ -5,34 +5,34 @@ describe OutputProcessor do
   describe "process_user_company" do
     let! (:user_1) { 
       {
-		"id": 30,
-		"first_name": "Genesis",
-		"last_name": "Carr",
-		"email": "genesis.carr@demo.com",
-		"company_id": 1,
-		"email_status": true,
-		"active_status": true,
-		"tokens": 71
+		"id" => 30,
+		"first_name" => "Genesis",
+		"last_name" => "Carr",
+		"email" => "genesis.carr@demo.com",
+		"company_id" => 1,
+		"email_status" => true,
+		"active_status" => true,
+		"tokens" => 71
 	}
 }
   let(:user_2) {
       {
-      "id": 19,
-      "first_name": "Eileen",
-      "last_name": "Lynch",
-      "email": "eileen.lynch@fake.com",
-      "company_id": 1,
-      "email_status": true,
-      "active_status": true,
-      "tokens": 40
+      "id" => 19,
+      "first_name" => "Eileen",
+      "last_name" => "Lynch",
+      "email" => "eileen.lynch@fake.com",
+      "company_id" => 1,
+      "email_status" => true,
+      "active_status" => true,
+      "tokens" => 40
     }
   }
 
-    let! (:company_hash) { 	{
-      "id": 1,
-      "name": "Blue Cat Inc.",
-      "top_up": 71,
-      "email_status": false
+    let! ( :company_hash) { 	{
+      "id" => 1,
+      "name" => "Blue Cat Inc.",
+      "top_up" => 71,
+      "email_status" => false
     }
   }
 
