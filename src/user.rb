@@ -1,4 +1,5 @@
 class User
+  attr_accessor :first_name,:last_name, :email, :email_status, :tokens
 
   def initialize(user_hash)
     @id = user_hash[:id]
@@ -7,7 +8,7 @@ class User
     @email = user_hash[:email]
     @comapny_id = user_hash[:company_id]
     @email_status = user_hash[:active_status]
-    @tokens = user_hash[:tokens]
+    @tokens = user_hash[:tokens].to_i
   end
 
 end

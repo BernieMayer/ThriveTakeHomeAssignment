@@ -41,7 +41,7 @@ describe OutputProcessor do
     
     it "should output the correct output" do
       output = <<-TEXT
-  Company Id: 1
+	Company Id: 1
 	Company Name: Blue Cat Inc.
 	Users Emailed:
 	Users Not Emailed:
@@ -54,7 +54,7 @@ describe OutputProcessor do
 		Total amount of top ups for Blue Cat Inc.: 142
       TEXT
 
-      expect(OutputProcessor.process_user_company(users, company)).to eq(output)
+      expect(OutputProcessor.process_user_company( company, users)).to eq(output)
     end
 
   end
