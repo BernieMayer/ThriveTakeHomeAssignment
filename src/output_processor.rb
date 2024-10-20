@@ -6,6 +6,8 @@ class OutputProcessor
     users_not_emailed_hashes = []
     total_top_ups = 0
     users.sort_by(&:last_name).each do |user|
+      next if user.company_id != company.id
+     
       total_top_ups += company.top_up
       obj = {
         previous_token_balance: user.tokens,

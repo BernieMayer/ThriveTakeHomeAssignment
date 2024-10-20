@@ -1,5 +1,6 @@
 require './src/Company'
 require './src/User'
+require './src/Output_Processor'
 require 'json'
 
 class Challenge
@@ -14,9 +15,6 @@ class Challenge
     users_hash = JSON.parse(user_file)
     companies_hash = JSON.parse(companies_file)
 
-    puts(users_hash[0])
-
-  
     companies = []
     companies_hash.each do |company_hash|
       companies.append(Company.new(company_hash))
@@ -24,8 +22,16 @@ class Challenge
 
     users = []
     users_hash.each do |user_hash|
-      users.append(User.new(user_hash))
-    end  
+      user = User.new(user_hash)
+      users.append(user)
+    end 
+    
+    output = "\n"
+    companies.each do |company|
+      output << OutputProcessor.process_user_company(company, users) << "\n"
+    end
+    
+    puts output
   end
 
 end
