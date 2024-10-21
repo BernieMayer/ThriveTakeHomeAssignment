@@ -11,6 +11,10 @@ class Company
 
   def output_top_ups_data
     output = ""
+
+    if @users.length == 0
+      return output
+    end
     users_emailed_hashes = []
     users_not_emailed_hashes = []
     total_top_ups = 0
