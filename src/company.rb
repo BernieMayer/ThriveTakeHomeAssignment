@@ -53,7 +53,7 @@ class Company
 
   def add_users(users_array)
     users_array.each do |user|
-      @users.append(user) if user.company_id == @id
+      @users.append(user) if user.company_id == @id && user.active_status
     end
   end
 end
