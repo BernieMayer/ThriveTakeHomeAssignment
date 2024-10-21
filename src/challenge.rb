@@ -1,6 +1,6 @@
 require './src/Company'
 require './src/User'
-require './src/Output_Processor'
+require './src/Verification'
 require 'json'
 
 class Challenge
@@ -22,8 +22,12 @@ class Challenge
 
     users = []
     users_hash.each do |user_hash|
-      user = User.new(user_hash)
-      users.append(user)
+      if Verification.verify_user(user_hash)
+        user = User.new(user_hash)
+        users.append(user)
+      else
+        puts "An invalid user json was detected, the json was #{user_hash}"
+      end
     end 
     
     output = "\n"
