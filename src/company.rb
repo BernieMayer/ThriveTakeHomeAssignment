@@ -6,7 +6,7 @@ class Company
     @name = company_hash["name"]
     @top_up = company_hash["top_up"].to_i
     @email_status = company_hash["email_status"]
-    @users = []
+    @users = Set.new
   end
 
   def output_top_ups_data
@@ -57,7 +57,7 @@ class Company
 
   def add_users(users_array)
     users_array.each do |user|
-      @users.append(user) if user.company_id == @id && user.active_status
+      @users.add(user) if user.company_id == @id && user.active_status
     end
   end
 end
