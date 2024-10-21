@@ -42,4 +42,32 @@ describe Verification do
     end
   end
   
+  describe "#self.verify_company" do
+    describe "invalid hash" do
+      let! ( :invalid_company_hash) { 	{
+        "id" => 1,
+        "top_up" => 71,
+        "email_status" => false
+      }
+    }
+
+      it "should return true" do
+        expect(Verification.verify_company(invalid_company_hash)).to be(false)
+      end
+    end
+
+    describe "valid hash" do
+      let! ( :company_hash) { 	{
+        "id" => 1,
+        "name" => "Blue Cat Inc.",
+        "top_up" => 71,
+        "email_status" => false
+      }
+    }
+
+      it "should return true" do
+        expect(Verification.verify_company(company_hash)).to be(true)
+      end
+    end
+  end
 end

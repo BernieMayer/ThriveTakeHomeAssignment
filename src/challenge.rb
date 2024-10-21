@@ -17,7 +17,11 @@ class Challenge
 
     companies = []
     companies_hash.each do |company_hash|
-      companies.append(Company.new(company_hash))
+      if Verification.verify_company(company_hash)
+        companies.append(Company.new(company_hash))
+      else
+        puts "An invalid user json was detected, the json was #{company_hash}"
+      end
     end
 
     users = []

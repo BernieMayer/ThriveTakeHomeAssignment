@@ -8,7 +8,9 @@ class Verification
   end
 
   def self.verify_company(company_hash)
-    
+    attributes = ["id", "name", "top_up", "email_status"]
+
+    attributes.all? { |attribute| company_hash.key?(attribute.to_s) }
   end
   
 end
