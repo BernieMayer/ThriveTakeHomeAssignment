@@ -59,6 +59,22 @@ let!(:users) { [ User.new(user_1), User.new(user_2)]}
     expect(company.output_top_ups_data).to eq(output)
   end
 
+  describe "company with no users" do
+    let! ( :company_hash) { 	{
+      "id" => 1,
+      "name" => "Blue Cat Inc.",
+      "top_up" => 71,
+      "email_status" => false
+    }
+  }
+
+  let!(:company) { Company.new(company_hash)}
+    it "should return empty string" do
+      expect(company.output_top_ups_data).to eq("")
+    end
+
+  end
+
 end
 
 end
