@@ -1,0 +1,22 @@
+Take Home for Thrive
+
+
+Structure
+
+/src
+    Contains the code files. 
+
+    challenge.rb is the main starting point
+    user.rb and company.rb are classes used to store the output_top_ups_data
+    verification.rb is used to verify the data for a given user or company json
+
+/spec
+
+    Contains the unit tests. The unit tests are written in rspec. 
+    They also can be used for used for documentation
+
+
+To run the program
+
+    `ruby src/challenge.rb` in the command line from the root directory. This will output the results in the terminal and to a file named "output.txt"
+
