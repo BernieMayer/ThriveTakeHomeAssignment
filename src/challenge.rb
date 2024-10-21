@@ -28,7 +28,8 @@ class Challenge
     
     output = "\n"
     companies.each do |company|
-      output << OutputProcessor.process_user_company(company, users) << "\n"
+      company.add_users(users)
+      output << company.output_top_ups_data << "\n"
     end
     
     puts output
