@@ -32,6 +32,8 @@ class Challenge
     end
     
     puts output
+
+    File.write("output.txt", output)
   end
 
 end
